@@ -1,0 +1,12 @@
+.params-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: auto;
+    margin-left: auto;
+    width: 18em;
+}
+
+.params-list__param {
+    font-size: 16px;
+}
