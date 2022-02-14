@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import { ParamsEditorContainer } from "./ParamsEditor/ParamsEditor.Container";
 import './App.css';
 
+export const mockData = {
+  params: [
+    {
+      "id": 1,
+      "name": "Назначение"
+    },
+    {
+      "id": 2,
+      "name": "Длина"
+    }
+  ],
+  paramValues: [
+    {
+      "paramId": 1,
+      "value": "повседневное"
+    },
+    {
+      "paramId": 2,
+      "value": "макси"
+    }
+  ]
+}
+
 function App() {
+  const [data, setData] = useState(mockData);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ParamsEditorContainer data={data} setData={setData} />
     </div>
   );
 }
